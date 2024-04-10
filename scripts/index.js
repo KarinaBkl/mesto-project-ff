@@ -9,8 +9,8 @@
 // @todo: Вывести карточки на страницу
 // Функция для создания карточки
 function cardAdd (name, link, deletCard) {
-  let cardTemplate = document.querySelector('#card-template').content;
-  let card = cardTemplate.cloneNode(true);
+  const cardTemplate = document.querySelector('#card-template').content;
+  const card = cardTemplate.cloneNode(true);
 
   card.querySelector('.card__image').src = link;
   card.querySelector('.card__title').textContent = name;
