@@ -14,6 +14,7 @@ const popupImageContainer = document.querySelector(".popup_type_image");
 const popupImage = popupImageContainer.querySelector(".popup__image");
 const popupCaption = popupImageContainer.querySelector(".popup__caption");
 const cardPopup = document.querySelector(".popup_type_new-card"); 
+
 // функция которая выводит карточки на страницу
 function addCards(cards, container) {
   cards.forEach((cardData) => {
@@ -49,7 +50,7 @@ function handleFormSubmit(evt) {
 // добавление новой карточки карточки
 cardElement.addEventListener("submit", function (event) {
   event.preventDefault();
-  const card = createCard(nameInputCard.value, linkInput.value, deletCard);
+  const card = createCard(nameInputCard.value, linkInput.value, likeCard, deletCard, openPopupWithImage);
   placesContainer.prepend(card);
   cardElement.reset();
   closePopup(cardPopup);
@@ -64,7 +65,7 @@ function openPopupWithImage(cardData) {
 };
 
 import { initialCards } from "./cards";
-import { createCard, deletCard, likeCard, onCardClick } from "./card";
+import { createCard, deletCard, likeCard} from "./card";
 import { closePopup, openPopup, closeByEsc } from "./modal";
 import "../pages/index.css";
 import "./cards";
