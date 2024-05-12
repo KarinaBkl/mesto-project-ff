@@ -2,7 +2,7 @@
 function openPopup(popup) {
   popup.classList.add("popup_is-opened");
   document.addEventListener("keydown", closeByEsc);
-}
+};
 
 //функция закрытия попапов
 function closePopup(popupToClose) {
@@ -37,3 +37,4 @@ document.querySelectorAll(".popup").forEach((popup) => {
 });
 
 export { closePopup, openPopup, closeByEsc };
+

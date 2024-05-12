@@ -10,12 +10,12 @@ module.exports = {
     filename: 'main.js',
     publicPath: ''
   },
-  mode: 'production', // Изменено на production
+  mode: 'production', 
   devServer: {
     static: path.resolve(__dirname, './dist'),
     compress: true,
     port: 8080,
-    open: true // Отключен автоматический запуск браузера
+    open: true 
   },
   module: {
     rules: [

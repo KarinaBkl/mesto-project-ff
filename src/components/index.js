@@ -5,7 +5,6 @@ const jobInput = document.querySelector(".popup__input_type_description");
 const openButtonCard = document.querySelector(".profile__add-button");
 const openButtonProfile = document.querySelector(".profile__edit-button");
 const openPopupProfile = document.querySelector(".popup_type_edit");
-const openAddCard = document.querySelector(".popup_type_new-card");
 const nameInputCard = document.querySelector(".popup__input_type_card-name");
 const linkInput = document.querySelector(".popup__input_type_url");
 const placesContainer = document.querySelector(".places__list");
@@ -14,21 +13,13 @@ const formElementProfile = openPopupProfile.querySelector(".popup__form");
 const popupImageContainer = document.querySelector(".popup_type_image");
 const popupImage = popupImageContainer.querySelector(".popup__image");
 const popupCaption = popupImageContainer.querySelector(".popup__caption");
-
+const cardPopup = document.querySelector(".popup_type_new-card"); 
 // функция которая выводит карточки на страницу
 function addCards(cards, container) {
   cards.forEach((cardData) => {
-    container.append(
-      createCard(
-        cardData.name,
-        cardData.link,
-        likeCard,
-        deletCard,
-        openPopupWithImage
-      )
-    );
+    container.append(createCard(cardData.name, cardData.link, likeCard, deletCard, openPopupWithImage));
   });
-}
+};
 
 // вызываем функцию для отображения карточек на странице
 addCards(initialCards, placesContainer);
@@ -42,7 +33,7 @@ openButtonProfile.addEventListener("click", function () {
   jobInput.value = textInputDescription;
   openPopup(openPopupProfile);
 });
-openButtonCard.addEventListener("click", () => openPopup(openAddCard));
+openButtonCard.addEventListener("click", () => openPopup(cardPopup));
 document.addEventListener("keydown", closeByEsc);
 
 // функция при отправке форм
@@ -53,7 +44,7 @@ function handleFormSubmit(evt) {
   profileTitle.textContent = nameValue;
   profileDescription.textContent = jobValue;
   closePopup(openPopupProfile);
-}
+};
 
 // добавление новой карточки карточки
 cardElement.addEventListener("submit", function (event) {
@@ -61,7 +52,7 @@ cardElement.addEventListener("submit", function (event) {
   const card = createCard(nameInputCard.value, linkInput.value, deletCard);
   placesContainer.prepend(card);
   cardElement.reset();
-  closePopup(openAddCard);
+  closePopup(cardPopup);
 });
 
 // функция открытия при клике по изображению карточки
@@ -70,7 +61,7 @@ function openPopupWithImage(cardData) {
   popupImage.alt = cardData.name;
   popupCaption.textContent = cardData.name;
   openPopup(popupImageContainer);
-}
+};
 
 import { initialCards } from "./cards";
 import { createCard, deletCard, likeCard, onCardClick } from "./card";
