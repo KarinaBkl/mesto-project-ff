@@ -17,7 +17,7 @@
  * валидация форм.
 ## Как установить и запустить проект:
 Клонировать репозиторий:  
-  [Проект Mesto](https://github.com/KarinaBkl/mesto-project-ff.git)
+  [Проект Mesto](https://github.com/KarinaBkl/mesto-project-ff.git)  
 Установить зависимости:  
     npm install  
 Собрать проект Вебпаком:  
