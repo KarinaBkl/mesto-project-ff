@@ -1,11 +1,11 @@
 # Проектная работа Mesto
 Репазиторий: (https://github.com/KarinaBkl/mesto-project-ff.git)  
 Сыллка на сайт: https://karinabkl.github.io/mesto-project-ff/   
-## Стек технологий:
+## Используемые технологии:
  * HTML 5  
  * CSS 3  
  * JavaScript    
- * БЭМ (Nested)  
+ * БЭМ  
  * Webpack   
  * Figma  
 ## Фукционал:
