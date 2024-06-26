@@ -24,5 +24,3 @@
     npm run build  
 ### Запустить проект на локальном сервере:  
     npm run dev  
-## Пример макета
-![Uploading MAIN PAGE DELETE ICON.png…]()
