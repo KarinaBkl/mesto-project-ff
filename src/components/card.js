@@ -1,3 +1,4 @@
+import { deleteCardFromServer, cleanLike, putLike } from "./api";
 // Функция для создания карточки
 function createCard(name, link, likes, ownerId, cardId, userId, likeCard, deletCard, openPopupWithImage) {
   const cardTemplate = document
@@ -58,4 +59,4 @@ function likeCard(likeCardButton, cardId, meterLike) {
 
 
 export { createCard, likeCard, deletCard };
-import { deleteCardFromServer, cleanLike, putLike } from "./api";
+

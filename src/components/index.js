@@ -1,3 +1,9 @@
+import { createCard, deletCard, likeCard } from "./card";
+import { closePopup, openPopup } from "./modal";
+import "../pages/index.css";
+import { clearValidation, enableValidation } from "./validation";
+import { getUserInfo, getCardsInfo, updateUserProfile, addCardToServer, updateAvatar } from "./api";
+
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const nameInput = document.querySelector(".popup__input_type_name");
@@ -20,9 +26,17 @@ const profileEditAvatarPopup = document.querySelector('.popup_type_edit-avatar')
 const profileFormAvatar = profileEditAvatarPopup.querySelector('.popup__avatar');
 const avatarInput = document.querySelector('.popup_type_edit-avatar-url');
 let userId;
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
 
 //промис для отображения информации 
-Promise.all([getUserInfo(), getCardInfo()])
+Promise.all([getUserInfo(), getCardsInfo()])
 .then(([userData, cardData]) => {
   profileDescription.textContent = userData.about;
   profileTitle.textContent = userData.name;
@@ -72,14 +86,14 @@ function handleFormSubmit(evt) {
   evt.preventDefault();
   const nameValue = nameInput.value;
   const jobValue = jobInput.value;
-  profileTitle.textContent = nameValue;
-  profileDescription.textContent = jobValue;
   const popupElement = document.querySelector(".popup_is-opened");
   const popupButton = popupElement.querySelector(".popup__button");
   popupButton.textContent = 'Сохранение...';
 
   updateUserProfile(nameValue, jobValue)
-    .then(() => {
+    .then((data) => {
+      profileTitle.textContent = data.name;
+      profileDescription.textContent = data.about;
       closePopup(popupProfile);
     })
     .catch((error) => {
@@ -168,9 +182,3 @@ document.querySelectorAll(".popup__close").forEach((button) => {
 });
 
 enableValidation(config);
-
-import { createCard, deletCard, likeCard } from "./card";
-import { closePopup, openPopup } from "./modal";
-import "../pages/index.css";
-import { clearValidation, config, enableValidation } from "./validation";
-import { getUserInfo, getCardInfo, updateUserProfile, addCardToServer, updateAvatar } from "./api";

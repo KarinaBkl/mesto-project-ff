@@ -1,14 +1,3 @@
-export {
-  getCardInfo,
-  getUserInfo,
-  updateUserProfile,
-  addCardToServer,
-  deleteCardFromServer,
-  cleanLike,
-  putLike,
-  updateAvatar,
-};
-
 // конфиг для запроса
 const configApi = {
   baseUrl: "https://mesto.nomoreparties.co/v1/wff-cohort-17",
@@ -35,7 +24,7 @@ const getUserInfo = () => {
 };
 
 // информация о карточках
-const getCardInfo = () => {
+const getCardsInfo = () => {
   return fetch(`${configApi.baseUrl}/cards`, {
     headers: configApi.headers,
   }).then(checkResponse);
@@ -98,4 +87,15 @@ function updateAvatar(avatar) {
       avatar: avatar,
     }),
   }).then(checkResponse);
+};
+
+export {
+  getCardsInfo,
+  getUserInfo,
+  updateUserProfile,
+  addCardToServer,
+  deleteCardFromServer,
+  cleanLike,
+  putLike,
+  updateAvatar,
 };
