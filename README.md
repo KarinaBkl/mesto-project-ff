@@ -2,14 +2,12 @@
 Репазиторий: (https://github.com/KarinaBkl/mesto-project-ff.git)  
 Сыллка на сайт: https://karinabkl.github.io/mesto-project-ff/   
 ## Стек технологий:
-HTML 5  
-CSS 3  
-JavaScript   
-ООП  
-БЭМ (Nested)  
-Webpack  
-git/github  
-Figma  
+ * HTML 5  
+ * CSS 3  
+ * JavaScript    
+ * БЭМ (Nested)  
+ * Webpack   
+ * Figma  
 ## Фукционал:
 редактирование пользовательских данных (аватара и профиля),  
 добавление новых карточек,  
