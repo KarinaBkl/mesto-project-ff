@@ -28,21 +28,21 @@ Promise.all([getUserInfo(), getCardInfo()])
   profileTitle.textContent = userData.name;
   profileImage.src = userData.avatar;
   userId = userData._id;
-  cardData.forEach(function (card) {
+  cardData.forEach(function(card) {
     placesContainer.append(
       createCard(
         card.name,
         card.link,
         card.likes,
         card.owner._id,
-        card._id,
+        card._id, 
         userId,
         likeCard,
         deletCard,
         openPopupWithImage
       )
-    )
-  })
+    );
+  });
 })
 .catch((error) => {
   console.error("Произошла ошибка:", error);
