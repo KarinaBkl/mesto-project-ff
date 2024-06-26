@@ -1,5 +1,5 @@
 # Проектная работа Mesto
-Репазиторий: [Проект Mesto](https://github.com/KarinaBkl/mesto-project-ff.git)  
+Репазиторий: (https://github.com/KarinaBkl/mesto-project-ff.git)  
 Сыллка на сайт: https://karinabkl.github.io/mesto-project-ff/   
 ## Стек технологий:
 HTML 5  
