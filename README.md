@@ -1,3 +1,19 @@
 # Проектная работа Mesto
-https://karinabkl.github.io/mesto-project-ff/
-
+Репазиторий: git@github.com:KarinaBkl/mesto-project-ff.git
+Сыллка на сайт: https://karinabkl.github.io/mesto-project-ff/ 
+## Стек технологий:
+HTML 5
+CSS 3
+JavaScript (ES 6)
+ООП
+БЭМ (Nested)
+Webpack
+git/github
+Figma
+## Фукционал:
+редактирование пользовательских данных (аватара и профиля),
+добавление новых карточек,
+удаление пользователем тех карточек, которые добавил именно он,
+добавление и отмена лайков, счетчик лайков,
+просмотр увеличенного изображения в попапе,
+валидация форм.
